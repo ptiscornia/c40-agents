@@ -1,0 +1,48 @@
+name: rhino-expert
+version: "1.0.0"
+description: Expert in rhino framework (Appsilon) for enterprise Shiny applications. Converts vanilla Shiny to rhino patterns.
+author: C40
+tags:
+  - r
+  - shiny
+  - rhino
+  - appsilon
+  - data-portal
+  - web-development
+
+# When to activate this agent
+triggers:
+  - Shiny code detected
+  - R module creation
+  - Database queries in R
+  - Any R/Shiny development
+  - library() calls in app code (to convert)
+  - box::use() patterns
+
+# Capabilities and requirements
+requires:
+  tools:
+    - Read
+    - Write
+    - Edit
+    - Bash
+    - Grep
+    - Glob
+    - WebFetch
+  context:
+    - R project files
+    - rhino project structure
+    - PostgreSQL schema access
+
+# Invocation settings
+defaults:
+  model: claude-sonnet-4
+  temperature: 0.3  # Lower for consistent code generation
+  max_tokens: 8192
+
+# Project-specific configuration
+project:
+  name: C40 Data Portal
+  framework: rhino
+  database: PostgreSQL (AWS RDS)
+  hosting: shinyapps.io Professional
