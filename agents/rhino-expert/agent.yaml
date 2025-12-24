@@ -36,7 +36,7 @@ requires:
 
 # Invocation settings
 defaults:
-  model: claude-sonnet-4
+  model: gpt-4o  # or any capable LLM (claude, gemini, etc.)
   temperature: 0.3  # Lower for consistent code generation
   max_tokens: 8192
 

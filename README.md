@@ -16,26 +16,24 @@ This repository contains reusable **agent definitions** - specialized AI assista
 
 ### Using an Agent in Your Project
 
-**Option 1: Reference in CLAUDE.md**
+**Option 1: System Prompt Injection**
 
-Add to your project's `CLAUDE.md`:
+Copy the contents of `agents/<name>/prompt.md` into your LLM's system prompt or project context file.
+
+**Option 2: Reference in Project Context**
+
+Add a reference to the agent in your project's AI context file:
 
 ```markdown
 ## Available Agents
 
 When working with R/Shiny code, use the rhino-expert agent from:
-https://github.com/c40/c40-agents/agents/rhino-expert/prompt.md
+https://github.com/ptiscornia/c40-agents/agents/rhino-expert/prompt.md
 ```
 
-**Option 2: Copy the Prompt**
+**Option 3: Platform-Specific Integration**
 
-Copy the contents of `agents/<name>/prompt.md` into your project's context.
-
-**Option 3: As Claude Code Skill** *(coming soon)*
-
-```bash
-claude --skill c40-agents:rhino-expert
-```
+Package as Custom GPT (OpenAI), Gem (Google), or other platform-specific formats.
 
 ## Repository Structure
 
@@ -83,7 +81,7 @@ tags: [domain, capability]
 requires:
   tools: [Read, Write, Edit]
 defaults:
-  model: claude-sonnet-4
+  model: gpt-4o  # or any LLM
 ```
 
 ### prompt.md

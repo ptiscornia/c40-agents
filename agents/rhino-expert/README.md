@@ -15,15 +15,16 @@ Use this agent when:
 
 ### Invocation
 
-**Claude Code CLI:**
-```bash
-# Reference this agent in your project's CLAUDE.md or settings
-claude --agent c40-agents/agents/rhino-expert
-```
+**System Prompt Injection:**
 
-**As Task subagent:**
-```
-Use the Task tool with the rhino-expert agent for Shiny/R code
+Copy the contents of `prompt.md` into your LLM's system prompt.
+
+**Reference in Project Context:**
+
+Add a reference to this agent in your project's AI context file:
+```markdown
+When working with R/Shiny code, use the rhino-expert agent from:
+https://github.com/ptiscornia/c40-agents/agents/rhino-expert/prompt.md
 ```
 
 ## Capabilities

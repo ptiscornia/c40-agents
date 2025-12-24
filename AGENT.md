@@ -57,7 +57,7 @@ requires:
 
 # Invocation settings
 defaults:
-  model: claude-sonnet-4  # or other supported model
+  model: gpt-4o  # or any supported model (claude, gemini, etc.)
   temperature: 0.7
   max_tokens: 4096
 ```
@@ -113,16 +113,14 @@ cat agents/<agent-name>/agent.yaml
 
 ### Integration Patterns
 
-**1. Direct Invocation (Claude Code)**
-```
-Use the Task tool with the agent from c40-agents/<agent-name>
-```
+**1. System Prompt Injection**
+Copy the agent's `prompt.md` content into your LLM's system prompt.
 
 **2. As MCP Server**
 Agents can be exposed as MCP servers for tool-based integration.
 
-**3. As Skills/Plugins**
-Some agents are packaged as Claude Code skills.
+**3. As Custom GPT / Gem / Skill**
+Package the agent for platform-specific integrations (OpenAI GPTs, Google Gems, etc.).
 
 ## For LLM Agents Working Here
 
